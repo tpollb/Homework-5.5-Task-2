@@ -1,9 +1,14 @@
 ﻿using System;
 
-namespace Homework_5._5_Task_1
+namespace Homework_5._5_Task_2
 {
     class Program
     {
+        /// <summary>
+        /// Метод разделения предложения по словам
+        /// </summary>
+        /// <param name="Arg">строка для разделения</param>
+        /// <returns></returns>
         static string[] SplitArray(string Arg)
         {
 
@@ -11,10 +16,23 @@ namespace Homework_5._5_Task_1
             return arrSplited;
         }
 
-        static void ArrayReverse(string[] Arg)
+        /// <summary>
+        /// Метод перестановки слов в предложении
+        /// </summary>
+        /// <param name="Arg">входной массив для разделения</param>
+        static string[] ArrayReverse(string[] Arg)
         {
-            int i = Arg.Length;
-            for (i = Arg.Length - 1; i > -1; i--)
+            Array.Reverse(Arg);
+            return (Arg);
+        }
+
+        /// <summary>
+        /// Метод вывода содержимого массива на экран
+        /// </summary>
+        /// <param name="Arg">входной массив для вывода</param>
+        static void DisplayArray(string[] Arg)
+        {
+            for (int i = 0; i < Arg.Length; i++)
             {
                 Console.Write($"{Arg[i]} ");
             }
@@ -29,7 +47,7 @@ namespace Homework_5._5_Task_1
             str = Console.ReadLine();
 
             Console.WriteLine();
-            ArrayReverse(SplitArray(str));
+            DisplayArray(ArrayReverse(SplitArray(str)));
 
 
             Console.ReadKey();
